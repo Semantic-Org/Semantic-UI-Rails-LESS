@@ -44,7 +44,7 @@ Execute command below and merge new and your changes in config files:
 
 ## Customization
 
-You can modify any Semantic UI configs and files placed to `vendor/assets/javascripts/semantic_ui` and `vendor/assets/stylesheets/semantic_ui`.
+You can modify any Semantic UI configs and files placed to `vendor/assets/javascripts/semantic_ui` and `vendor/assets/stylesheets/semantic_ui` directories.
 For example:
 
 * if you wish to remove unused components you can just remove corresponding lines from `semantic_ui.js` and `semantic_ui.css` files.
