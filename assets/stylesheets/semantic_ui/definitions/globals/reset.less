@@ -1,0 +1,45 @@
+/*
+ *= depend_on semantic_ui/theme.config
+ *= depend_on semantic_ui/config/globals/reset.overrides
+ *= depend_on semantic_ui/config/globals/reset.variables
+ */
+
+/*
+ * # Semantic - Reset
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2014 Contributor
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+            Theme
+*******************************/
+
+@type    : 'global';
+@element : 'reset';
+
+@import 'semantic_ui/theme.config';
+
+/*******************************
+             Reset
+*******************************/
+
+/* Border-Box */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* iPad Input Shadows */
+input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+  -webkit-appearance: none;
+  -moz-appearance: none; /* mobile firefox too! */
+}
+
+.loadUIOverrides();
