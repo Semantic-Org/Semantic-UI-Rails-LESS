@@ -55,7 +55,7 @@ namespace :update do
       copy_tree(src, File.dirname(paths.tmp_semantic_ui_themes), paths.fonts)
     end
 
-    Dir[File.join(paths.tmp_semantic_ui_themes, '**/*.png')].each do |src|
+    Dir[File.join(paths.tmp_semantic_ui_themes, '**/*.{png,gif}')].each do |src|
       copy_tree(src, File.dirname(paths.tmp_semantic_ui_themes), paths.images)
     end
 
