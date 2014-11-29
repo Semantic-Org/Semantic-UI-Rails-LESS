@@ -37,7 +37,7 @@ namespace :update do
     apply_patches
 
     generate_semantic_ui_js
-    generate_semantic_ui_less
+    generate_semantic_ui_css
   end
 
   def transform_definitions
@@ -148,7 +148,7 @@ namespace :update do
     File.write(File.join(paths.generator_templates, 'semantic_ui.js'), content)
   end
 
-  def generate_semantic_ui_less
+  def generate_semantic_ui_css
     relative_paths = search_relative_paths(File.join(paths.tmp_semantic_ui_definitions, '**/*.less'), paths.tmp_semantic_ui_src)
     relative_paths = relative_paths.map { |relative_path| File.join('semantic_ui', relative_path) }
 
