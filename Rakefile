@@ -1,10 +1,9 @@
 require 'bundler/gem_tasks'
-require 'minispec'
 
 load 'tasks/update.rake'
 
 desc 'Run all specs'
 task :spec do
+  require 'minispec'
   Minispec.run
 end
-
