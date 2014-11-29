@@ -1,4 +1,4 @@
-# less-rails-semantic_ui
+# less-rails-semantic_ui [![Build Status](https://travis-ci.org/maxd/less-rails-semantic_ui.png?branch=master)](https://travis-ci.org/maxd/less-rails-semantic_ui)
 
 This is a gem for Rails with [Semantic UI](https://github.com/Semantic-Org/Semantic-UI/) assets inside.
 It provide ability to customize component themes and variables on the fly in your application.
