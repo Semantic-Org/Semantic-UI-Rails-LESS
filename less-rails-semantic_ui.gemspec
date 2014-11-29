@@ -1,10 +1,9 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'less/rails/semantic_ui/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'less-rails-semantic_ui'
-  spec.version       = Less::Rails::SemanticUi::VERSION
+  spec.version       = '0.0.1'
   spec.authors       = ['Maxim Dobryakov']
   spec.email         = ['maxim.dobryakov@gmail.com']
   spec.summary       = %q{Semantic UI assets for Rails}
