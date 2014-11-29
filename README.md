@@ -51,6 +51,11 @@ For example:
 * if you wish to change components themes you can just configure them in `theme.config`.
 * if you wish to change component variables or extend components you can just configure corresponding `config/{collections,elements, globals,modules,views}/*.{overrides,variables}` files.
 
+## Versioning
+
+This gem will directly track the semantic versioning of the Semantic UI project. Major and minor versions
+will always match to theirs, though we may have tiny patch level releases specific to this gem.
+
 ## Contributing
 
 1. Fork it ( https://github.com/maxd/less-rails-semantic_ui )
