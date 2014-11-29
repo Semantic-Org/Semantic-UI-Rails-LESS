@@ -38,7 +38,7 @@ Add references to `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
 ## Upgrade to new version
 
-Execute command below and merge new and your changes in config files:
+Execute command below and merge your and new changes in config files:
 
     $ rails generator semantic_ui:install
 
