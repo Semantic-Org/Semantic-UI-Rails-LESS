@@ -99,7 +99,7 @@ namespace :update do
     patch(theme_config_file) do |content|
       content = must_be_changed(content) { |c| c.sub(%r{\/\*.*?\*\/}m, '') }
       content = must_be_changed(content) { |c| c.gsub(%q{@themesFolder : 'themes/';}, %q{@themesFolder : 'semantic_ui/themes/';}) }
-      content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : '_site/';}, %q{@siteFolder  : 'semantic_ui/config/';}) }
+      content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : 'site/';}, %q{@siteFolder  : 'semantic_ui/config/';}) }
       must_be_changed(content) { |c| c.gsub(%q{@import "theme.less";}, %q{@import "semantic_ui/theme.less";}) }
     end
   end
