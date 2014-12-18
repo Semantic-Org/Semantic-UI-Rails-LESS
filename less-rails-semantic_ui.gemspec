@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'less-rails-semantic_ui'
-  spec.version       = '1.2.0.0'
+  spec.version       = '1.3.1.0'
   spec.authors       = ['Maxim Dobryakov']
   spec.email         = ['maxim.dobryakov@gmail.com']
   spec.summary       = %q{Semantic UI assets for Rails}
