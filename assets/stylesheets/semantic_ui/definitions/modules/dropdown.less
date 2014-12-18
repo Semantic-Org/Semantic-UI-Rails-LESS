@@ -46,7 +46,7 @@
 *******************************/
 
 /*--------------
-     Menu
+      Menu
 ---------------*/
 
 .ui.dropdown .menu {
@@ -616,6 +616,11 @@ select.ui.dropdown {
 .ui.loading.dropdown > .text {
   transition: none;
 }
+.ui.dropdown > .loading.menu {
+  display: block;
+  visibility: hidden;
+  z-index: @loadingZIndex;
+}
 
 /*--------------------
     Keyboard Select
@@ -692,6 +697,28 @@ select.ui.dropdown {
 /* Flyout Direction */
 .ui.dropdown .menu {
   left: 0px;
+}
+
+
+/* Default Side (Right) */
+.ui.dropdown .right.menu > .menu,
+.ui.dropdown .menu .right.menu {
+  left: 100% !important;
+  right: auto !important;
+}
+
+/* Left Flyout Menu */
+.ui.dropdown > .left.menu .menu,
+.ui.dropdown .menu .left.menu {
+  left: auto !important;
+  right: 100% !important;
+}
+
+.ui.dropdown .item .left.dropdown.icon,
+.ui.dropdown .left.menu .item .dropdown.icon {
+  width: auto;
+  float: @leftMenuDropdownIconFloat;
+  margin: @leftMenuDropdownIconMargin;
 }
 
 
@@ -772,15 +799,16 @@ select.ui.dropdown {
 .ui.floating.dropdown .menu {
   left: 0;
   right: auto;
-  margin-top: @floatingMenuDistance !important;
   box-shadow: @floatingMenuBoxShadow;
   border-radius: @floatingMenuBorderRadius;
+}
+.ui.floating.dropdown > .menu {
+  margin-top: @floatingMenuDistance !important;
 }
 
 /*--------------
      Pointing
 ---------------*/
-
 
 .ui.pointing.dropdown > .menu {
   top: 100%;
