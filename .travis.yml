@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
   - 2.1.5
+  - 2.2.0
 before_install:
   - travis_retry gem install bundler
   - bundle --version
