@@ -12,6 +12,8 @@ namespace :update do
     choose_version(version)
 
     transform_sources
+
+    bump_gem_version(version)
   end
 
   def paths
@@ -165,6 +167,11 @@ namespace :update do
     relative_paths.compact
   end
 
+  def bump_gem_version(version)
+    version_file = File.join(paths.lib_semantic_ui, 'version.rb')
+    File.write(version_file, File.read(version_file).gsub(/\d+\.\d+\.\d+\.\d+/, "#{version}.0"))
+  end
+
   private
 
   def copy_tree(src, src_dir, dest_dir)
@@ -207,6 +214,8 @@ namespace :update do
 
     attr_reader :generator_templates
 
+    attr_reader :lib_semantic_ui
+
     def initialize
       @root = File.expand_path('..', __dir__)
       @config = File.join(@root, 'config')
@@ -224,6 +233,8 @@ namespace :update do
       @stylesheets = File.join(@root, 'assets', 'stylesheets', 'semantic_ui')
 
       @generator_templates = File.join(@root, 'lib', 'generators', 'semantic_ui', 'install', 'templates')
+
+      @lib_semantic_ui = File.join(@root, 'lib', 'less', 'rails', 'semantic_ui')
     end
   end
 
