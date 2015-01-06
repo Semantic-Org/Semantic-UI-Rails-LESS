@@ -132,7 +132,7 @@ namespace :update do
 
   def patch_asset_paths
     patch(File.join(paths.stylesheets, 'themes', '**/*.variables')) do |content|
-      content.gsub(%r{^(@\w+Path\s*:\s*")\.\.\/\.\.(.*";)$}, %q{\1semantic_ui\2})
+      content.gsub(%r{^(@\w+Path\s*:\s*["'])\.\.\/\.\.(.*["'];)$}, %q{\1semantic_ui\2})
     end
   end
 
