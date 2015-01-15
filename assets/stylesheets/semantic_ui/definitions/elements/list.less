@@ -111,8 +111,8 @@ ol.ui.list ol,
   vertical-align: @iconContentVerticalAlign;
   transition: @iconTransition;
 }
-.ui.list .list > .item [class*="top aligned"]i.icon,
-.ui.list > .item > [class*="top aligned"]i.icon {
+.ui.list .list > .item i[class*="top aligned"].icon,
+.ui.list > .item > i[class*="top aligned"].icon {
   vertical-align: top;
 }
 .ui.list .list > .item > i.icon:only-child,
@@ -245,6 +245,8 @@ ol.ui.list ol,
 .ui.menu .ui.list .list > .item {
   display: list-item;
   table-layout: fixed;
+  background-color: transparent;
+
   list-style-type: @listStyleType;
   list-style-position: @listStylePosition;
 
