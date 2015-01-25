@@ -90,9 +90,9 @@
 
 .ui.button:focus {
   background-color: @focusBackgroundColor;
-  background-image: @focusBackgroundImage;
-  box-shadow: @focusBoxShadow;
   color: @focusColor;
+  background-image: @focusBackgroundImage !important;
+  box-shadow: @focusBoxShadow !important;
 }
 
 .ui.button:focus .icon {
@@ -215,6 +215,11 @@
   background-image: none !important;
   box-shadow: none !important;
   pointer-events: none;
+}
+
+/* Basic Group With Disabled */
+.ui.basic.buttons .ui.disabled.button {
+  border-color: @disabledBorderColor;
 }
 
 /*******************************
@@ -718,6 +723,15 @@
 .ui.basic.vertical.buttons .button {
   border-left: none;
 }
+
+.ui.basic.vertical.buttons .button {
+  border-left-width: 0px;
+  border-top: @basicGroupBorder;
+}
+.ui.basic.vertical.buttons .button:first-child {
+  border-top-width: 0px;
+}
+
 
 
 /*--------------
