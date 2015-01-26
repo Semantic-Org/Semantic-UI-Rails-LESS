@@ -1,12 +1,12 @@
 # less-rails-semantic_ui [![Gem Version](https://badge.fury.io/rb/less-rails-semantic_ui.svg)](http://badge.fury.io/rb/less-rails-semantic_ui) [![Build Status](https://travis-ci.org/maxd/less-rails-semantic_ui.png?branch=master)](https://travis-ci.org/maxd/less-rails-semantic_ui)
 
 This is a gem for Rails with [Semantic UI](https://github.com/Semantic-Org/Semantic-UI/) assets inside.
-It provide ability to customize component themes and variables on the fly in your application.
+It provides the ability to customize component themes and variables on the fly in your application.
 
 ## Features
 
-* LESS based (it is mean that it doesn't contains hacks usually used for convert LESS to SASS)
-* Semantic UI configs integrated to your application (you can customize it and change styles of components on the fly)
+* LESS based (meaning that it doesn't contains hacks usually used to convert LESS to SASS)
+* Semantic UI configs integrated in your application (you can customize and change component styles on the fly)
 
 ## Installation
 
@@ -20,17 +20,17 @@ And then execute:
 
     $ bundle install
 
-After that install configuration files inside your application to `vendor/assets` directory:
+After that, install configuration files inside your application in the `vendor/assets` directory with:
 
-    $ rails generator semantic_ui:install
+    $ rails generate semantic_ui:install
 
-Add references to `semantic_ui/semantic_ui.js` in `app/assets/application.js`:
+Require `semantic_ui/semantic_ui.js` in `app/assets/application.js`:
 
     ...
     //= require semantic_ui/semantic_ui
     ...
 
-Add references to `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
+Require `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
     ...
     *= require semantic_ui/semantic_ui
@@ -38,9 +38,9 @@ Add references to `semantic_ui/semantic_ui.css` in `app/assets/application.css`:
 
 ## Upgrade to new version
 
-Execute command below and merge your and new changes in config files:
+Execute command below and merge your custom and new changes in config files:
 
-    $ rails generator semantic_ui:install
+    $ rails generate semantic_ui:install
 
 ## Customization
 
