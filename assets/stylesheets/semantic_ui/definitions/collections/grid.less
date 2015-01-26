@@ -80,7 +80,6 @@
 .ui.grid > .row > .column {
   position: relative;
   display: inline-block;
-  text-align: left;
   font-size: 1rem;
 
   width: @oneWide;
@@ -1518,9 +1517,9 @@
   .ui.grid > [class*="six column"].doubling.row > .column {
     width: @threeColumn !important;
   }
-  .ui[class*="eight column"].doubling.grid > .row > .column,
-  .ui[class*="eight column"].doubling.grid > .column,
-  .ui.grid > [class*="eight column"].doubling.row > .column {
+  .ui[class*="seven column"].doubling.grid > .row > .column,
+  .ui[class*="seven column"].doubling.grid > .column,
+  .ui.grid > [class*="seven column"].doubling.row > .column {
     width: @threeColumn !important;
   }
   .ui[class*="eight column"].doubling.grid > .row > .column,
@@ -1572,9 +1571,6 @@
 
 /* Mobily Only */
 @media only screen and (max-width: @largestMobileScreen) {
-  .ui.doubling.grid {
-    width: 100% !important;
-  }
   .ui.grid > .doubling.row,
   .ui.doubling.grid > .row {
     display: block !important;
