@@ -10,11 +10,21 @@ It provides the ability to customize component themes and variables on the fly i
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this block to your application's Gemfile:
 
 ```ruby
+# Semantic UI assets
+
 gem 'less-rails-semantic_ui', '~> x.x.x'
+gem 'autoprefixer-rails', '~> x.x.x'
 ```
+
+> Semantic UI is using [autoprefixer](https://github.com/postcss/autoprefixer) (in our case [autoprefixer-rails](https://github.com/ai/autoprefixer-rails))
+> to appending additional CSS vendor-prefixes for improve compatibility with different browsers.
+> Without it some parts of Semantic UI (i.e. transitions or modal dialogs because they depends to transitions) won't works in some browsers.
+> You can remove this gem if you don't use such functionality of Semantic UI.
+>
+> P.S. I hope in the future this hack will be unnecessary.
 
 And then execute:
 
