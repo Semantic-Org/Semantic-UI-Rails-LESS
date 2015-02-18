@@ -22,7 +22,9 @@
 @type    : 'view';
 @element : 'feed';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
          Activity Feed
@@ -276,3 +278,5 @@
 }
 
 .loadUIOverrides();
+
+}

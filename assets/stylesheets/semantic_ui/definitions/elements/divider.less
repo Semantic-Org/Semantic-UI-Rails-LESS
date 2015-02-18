@@ -22,7 +22,9 @@
 @type    : 'element';
 @element : 'divider';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 
 /*******************************
@@ -208,9 +210,7 @@
     Inverted
 ---------------*/
 
-.ui.divider.inverted {
-  color: @invertedTextColor;
-}
+.ui.divider.inverted,
 .ui.vertical.inverted.divider,
 .ui.horizontal.inverted.divider {
   color: @invertedTextColor;
@@ -260,3 +260,6 @@
 
 
 .loadUIOverrides();
+
+}
+

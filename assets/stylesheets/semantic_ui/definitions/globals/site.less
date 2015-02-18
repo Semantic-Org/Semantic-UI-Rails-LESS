@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,13 +23,15 @@
 @type    : 'global';
 @element : 'site';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
-.loadFonts();
+& {
 
 /*******************************
              Page
 *******************************/
+
+.loadFonts();
 
 html,
 body {
@@ -149,3 +152,5 @@ input::selection {
 
 
 .loadUIOverrides();
+
+}

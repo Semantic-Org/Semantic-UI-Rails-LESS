@@ -15,7 +15,6 @@
  *
  */
 
-
 /*******************************
             Theme
 *******************************/
@@ -23,7 +22,10 @@
 @type    : 'collection';
 @element : 'breadcrumb';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
+
 
 /*******************************
            Breadcrumb
@@ -126,3 +128,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

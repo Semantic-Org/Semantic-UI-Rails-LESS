@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'module';
 @element : 'rating';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
            Rating
@@ -31,7 +33,6 @@
 
 .ui.rating {
   display: @display;
-  font-size: 0em;
   vertical-align: @verticalAlign;
 }
 .ui.rating:last-child {
@@ -51,14 +52,12 @@
   cursor: pointer;
 
   margin: 0em;
-  width: @iconHitbox;
-  text-align: center;
+  width: @iconWidth;
   height: auto;
+  text-align: center;
   padding: 0em;
-
   font-weight: normal;
   font-style: normal;
-  vertical-align: @verticalAlign;
 }
 
 
@@ -72,7 +71,7 @@
 
 /* Inactive */
 .ui.star.rating .icon {
-  width: @starIconHitbox;
+  width: @starIconWidth;
   color: @starInactiveColor;
 }
 
@@ -104,7 +103,7 @@
 --------------------*/
 
 .ui.heart.rating .icon {
-  width: @heartIconHitbox;
+  width: @heartIconWidth;
   color: @heartInactiveColor;
 }
 
@@ -194,11 +193,7 @@
   font-size: @massive;
 }
 
-/* Realign */
-.ui.large.rating,
-.ui.huge.rating,
-.ui.massive.rating {
-  vertical-align: @oversizedVerticalAlign;
-}
 
 .loadUIOverrides();
+
+}

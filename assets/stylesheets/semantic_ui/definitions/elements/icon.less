@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,10 @@
 @type    : 'element';
 @element : 'icon';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
+
 
 /*******************************
              Icon
@@ -33,11 +37,11 @@
   src: asset-url("@{fontPath}/@{fontName}.eot");
   src:
     asset-url("@{fontPath}/@{fontName}.eot?#iefix") format('embedded-opentype'),
-    asset-url("@{fontPath}/@{fontName}.svg#icons") format('svg'),
+    asset-url("@{fontPath}/@{fontName}.woff2") format('woff'),
     asset-url("@{fontPath}/@{fontName}.woff") format('woff'),
-    asset-url("@{fontPath}/@{fontName}.ttf") format('truetype')
+    asset-url("@{fontPath}/@{fontName}.ttf") format('truetype'),
+    asset-url("@{fontPath}/@{fontName}.svg#icons") format('svg')
   ;
-
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -349,3 +353,6 @@ i.massive.icon {
 }
 
 .loadUIOverrides();
+
+}
+

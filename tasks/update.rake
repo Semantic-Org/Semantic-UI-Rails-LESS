@@ -53,7 +53,7 @@ namespace :update do
   end
 
   def transform_themes
-    Dir[File.join(paths.tmp_semantic_ui_themes, '**/*.{eot,otf,svg,ttf,woff}')].each do |src|
+    Dir[File.join(paths.tmp_semantic_ui_themes, '**/*.{eot,otf,svg,ttf,woff,woff2}')].each do |src|
       copy_tree(src, File.dirname(paths.tmp_semantic_ui_themes), paths.fonts)
     end
 
@@ -108,7 +108,7 @@ namespace :update do
 
   def patch_paths_to_theme_config
     patch(File.join(paths.stylesheets, 'definitions', '**/*.less')) do |content|
-      must_be_changed(content) { |c| c.gsub(%q{@import '../../theme.config';}, %q{@import 'semantic_ui/theme.config';}) }
+      must_be_changed(content) { |c| c.gsub(%q{@import (multiple) '../../theme.config';}, %q{@import (multiple) 'semantic_ui/theme.config';}) }
     end
   end
 

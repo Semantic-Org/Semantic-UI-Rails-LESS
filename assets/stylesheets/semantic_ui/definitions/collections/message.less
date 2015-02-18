@@ -14,6 +14,7 @@
  * http://opensource.org/licenses/MIT
  *
  */
+
 /*******************************
             Theme
 *******************************/
@@ -21,8 +22,9 @@
 @type    : 'collection';
 @element : 'message';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Message
@@ -446,3 +448,5 @@
 }
 
 .loadUIOverrides();
+
+}

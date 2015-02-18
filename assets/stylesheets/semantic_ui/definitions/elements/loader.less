@@ -14,7 +14,6 @@
  * http://opensource.org/licenses/MIT
  *
  */
-
 /*******************************
             Theme
 *******************************/
@@ -22,8 +21,9 @@
 @type    : 'element';
 @element : 'loader';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Loader
@@ -266,3 +266,5 @@
 }
 
 .loadUIOverrides();
+
+}

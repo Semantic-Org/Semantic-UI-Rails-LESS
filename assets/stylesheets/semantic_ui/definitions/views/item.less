@@ -22,7 +22,9 @@
 @type    : 'view';
 @element : 'item';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
             Standard
@@ -470,3 +472,5 @@
 }
 
 .loadUIOverrides();
+
+}

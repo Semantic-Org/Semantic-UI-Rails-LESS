@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'view';
 @element : 'comment';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Standard
@@ -260,3 +262,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

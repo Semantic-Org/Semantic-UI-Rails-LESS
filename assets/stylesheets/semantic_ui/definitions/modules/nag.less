@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'module';
 @element : 'nag';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
              Nag
@@ -163,3 +165,6 @@ a.ui.nag {
 }
 
 .loadUIOverrides();
+
+}
+

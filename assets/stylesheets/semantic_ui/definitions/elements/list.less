@@ -22,7 +22,9 @@
 @type    : 'element';
 @element : 'list';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
             List
@@ -886,3 +888,5 @@ ol.ui.horizontal.list li:before,
 }
 
 .loadUIOverrides();
+
+}

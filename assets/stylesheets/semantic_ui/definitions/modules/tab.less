@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,9 @@
 @type    : 'module';
 @element : 'tab';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
            UI Tabs
@@ -98,3 +101,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

@@ -22,7 +22,9 @@
 @type    : 'view';
 @element : 'ad';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
          Advertisement
@@ -272,3 +274,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

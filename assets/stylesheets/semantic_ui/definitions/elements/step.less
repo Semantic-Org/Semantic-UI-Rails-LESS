@@ -5,7 +5,7 @@
  */
 
 /*
- * # Semantic - Steps
+ * # Semantic - Step
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -15,15 +15,21 @@
  *
  */
 
+
 /*******************************
-            Theme
+             Step
 *******************************/
+
+/*--------------
+   Load Theme
+---------------*/
 
 @type    : 'element';
 @element : 'step';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
            Singular
@@ -383,7 +389,7 @@
 .ui.six.steps,
 .ui.seven.steps,
 .ui.eight.steps {
-  display: block;
+  width: 100%;
 }
 .ui.one.steps > .step {
   width: 100%;
@@ -429,3 +435,5 @@
 }
 
 .loadUIOverrides();
+
+}

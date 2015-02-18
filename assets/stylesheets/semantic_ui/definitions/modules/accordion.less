@@ -14,7 +14,6 @@
  * http://opensource.org/licenses/MIT
  *
  */
-
 /*******************************
             Theme
 *******************************/
@@ -22,8 +21,9 @@
 @type    : 'module';
 @element : 'accordion';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Accordion
@@ -225,3 +225,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,10 @@
 @type    : 'element';
 @element : 'header';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
+
 
 /*******************************
             Header
@@ -69,17 +73,31 @@
   opacity: @iconOpacity;
   font-size: @iconSize;
   padding-top: @iconOffset;
-
   vertical-align: @iconAlignment;
-  padding-right: (@iconMargin / 2);
 }
 
-/* Only One */
+/* With Text Node */
 .ui.header .icon:only-child {
   display: inline-block;
   padding: 0em;
-  margin-right: (@iconMargin / 2);
-  vertical-align: baseline;
+  margin-right: @iconMargin;
+}
+
+/*-------------------
+        Image
+--------------------*/
+
+.ui.header > .image,
+.ui.header > img {
+  display: inline-block;
+  margin-top: @imageOffset;
+  width: @imageWidth;
+  height: @imageHeight;
+  vertical-align: @imageAlignment;
+}
+.ui.header > .image:only-child,
+.ui.header > img:only-child {
+  margin-right: @imageMargin;
 }
 
 /*--------------
@@ -91,8 +109,16 @@
   vertical-align: @contentAlignment;
 }
 
+/* After Image */
+.ui.header > img + .content,
+.ui.header > .image + .content {
+  padding-left: @imageMargin;
+  vertical-align: @contentImageAlignment;
+}
+
+/* After Icon */
 .ui.header > .icon + .content {
-  padding-left: (@iconMargin / 2);
+  padding-left: @iconMargin;
   display: table-cell;
   vertical-align: @contentIconAlignment;
 }
@@ -195,7 +221,6 @@ h5.ui.header .sub.header {
 .ui.tiny.header .sub.header {
   font-size: @tinySubHeaderFontSize;
 }
-
 
 /*-------------------
         Icon
@@ -601,3 +626,5 @@ a.ui.inverted.yellow.header:hover {
 }
 
 .loadUIOverrides();
+
+}

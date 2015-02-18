@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,9 @@
 @type    : 'module';
 @element : 'modal';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
              Modal
@@ -440,3 +443,5 @@
 
 
 .loadUIOverrides();
+
+}

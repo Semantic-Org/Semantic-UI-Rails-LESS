@@ -22,8 +22,9 @@
 @type    : 'module';
 @element : 'dimmer';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Dimmer
@@ -184,3 +185,5 @@ body.dimmed.dimmable > :not(.dimmer) {
 }
 
 .loadUIOverrides();
+
+}

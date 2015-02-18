@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,9 @@
 @type    : 'module';
 @element : 'sticky';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
             Sticky
@@ -78,3 +81,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

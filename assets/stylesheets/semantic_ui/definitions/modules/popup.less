@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,9 @@
 @type    : 'module';
 @element : 'popup';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 
 /*******************************
@@ -297,3 +300,6 @@
 
 
 .loadUIOverrides();
+
+}
+

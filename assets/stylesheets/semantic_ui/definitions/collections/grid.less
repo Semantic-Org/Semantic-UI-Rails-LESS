@@ -22,8 +22,9 @@
 @type    : 'collection';
 @element : 'grid';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Standard
@@ -1683,6 +1684,7 @@
     width: auto !important;
     margin: 0em 0em !important;
     box-shadow: none !important;
+    float: none !important;
     padding: (@stackableRowSpacing / 2) (@stackableGutter / 2) !important;
   }
   .ui.stackable.grid > .row {
@@ -1781,3 +1783,5 @@
 }
 
 .loadUIOverrides();
+
+}

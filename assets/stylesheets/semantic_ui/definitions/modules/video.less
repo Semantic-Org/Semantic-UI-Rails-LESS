@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'module';
 @element : 'video';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Video
@@ -129,3 +131,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

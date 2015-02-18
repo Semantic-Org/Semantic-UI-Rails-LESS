@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'module';
 @element : 'transition';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
           Transitions
@@ -83,8 +85,7 @@
 }
 
 
-/*******************************
-             Types
-*******************************/
-
 .loadUIOverrides();
+
+}
+

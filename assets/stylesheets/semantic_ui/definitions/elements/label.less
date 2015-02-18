@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'element';
 @element : 'label';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
             Label
@@ -324,16 +326,14 @@ a.ui.label {
 .ui.ribbon.label {
   position: relative;
   margin: 0em;
-
-  left: @ribbonOffset;
-  padding-left: @ribbonDistance;
+  min-width: max-content;
   border-radius: 0em @borderRadius @borderRadius 0em;
   border-color: @ribbonShadowColor;
 }
 
 .ui.ribbon.label:after {
   position: absolute;
-  content: "";
+  content: '';
 
   top: 100%;
   left: 0%;
@@ -348,13 +348,12 @@ a.ui.label {
   height: 0em;
 }
 
+/* Right Ribbon */
 .ui[class*="right ribbon"].label {
   text-align: left;
   transform: translateX(-100%);
-  left: @rightRibbonOffset;
   border-radius: @borderRadius 0em 0em @borderRadius;
   padding-left: @horizontalPadding;
-  padding-right: @ribbonDistance;
 }
 .ui[class*="right ribbon"].label:after {
   left: auto;
@@ -365,6 +364,37 @@ a.ui.label {
   border-color: transparent;
   border-top-color: inherit;
 }
+
+/* Positioning */
+.ui.ribbon.label {
+  left: @ribbonOffset;
+  margin-right: -@ribbonTriangleSize;
+  padding-left: @ribbonDistance;
+}
+.ui[class*="right ribbon"].label {
+  left: @rightRibbonOffset;
+  padding-right: @ribbonDistance;
+}
+
+
+/* Inside Image */
+.ui.image > .ribbon.label,
+.ui.card .image > .ribbon.label {
+  position: absolute;
+  top: @ribbonImageTopDistance;
+}
+.ui.card .image > .ui.ribbon.label,
+.ui.image > .ui.ribbon.label {
+  left: @ribbonImageOffset;
+  padding-left: @ribbonImageDistance;
+}
+.ui.card .image > .ui[class*="right ribbon"].label,
+.ui.image > .ui[class*="right ribbon"].label {
+  left: @rightRibbonImageOffset;
+  padding-left: @horizontalPadding;
+  padding-right: @ribbonImageDistance;
+}
+
 
 /*-------------------
       Attached
@@ -945,3 +975,5 @@ a.ui.yellow.label:hover:before {
 }
 
 .loadUIOverrides();
+
+}

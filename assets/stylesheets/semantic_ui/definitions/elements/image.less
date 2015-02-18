@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,7 +23,9 @@
 @type    : 'element';
 @element : 'image';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
              Image
@@ -291,3 +294,5 @@ img.ui.bordered.image {
 }
 
 .loadUIOverrides();
+
+}

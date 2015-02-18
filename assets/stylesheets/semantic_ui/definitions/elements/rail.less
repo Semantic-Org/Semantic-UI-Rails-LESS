@@ -22,17 +22,19 @@
 @type    : 'element';
 @element : 'rail';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
              Rails
 *******************************/
 
 .ui.rail {
-  font-size: @size;
   position: absolute;
   top: 0%;
   width: @width;
+  height: @height;
   box-sizing: @contentSizing;
 }
 
@@ -124,9 +126,11 @@
 ---------------*/
 
 .ui.rail {
-  font-size: @size;
+  font-size: @medium;
 }
 
 
 
 .loadUIOverrides();
+
+}

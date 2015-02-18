@@ -15,6 +15,7 @@
  *
  */
 
+
 /*******************************
             Theme
 *******************************/
@@ -22,8 +23,9 @@
 @type    : 'collection';
 @element : 'table';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
 
+& {
 
 /*******************************
              Table
@@ -1003,3 +1005,6 @@
 }
 
 .loadUIOverrides();
+
+}
+

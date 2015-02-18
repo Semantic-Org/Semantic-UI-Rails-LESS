@@ -15,7 +15,6 @@
  *
  */
 
-
 /*******************************
             Theme
 *******************************/
@@ -23,7 +22,9 @@
 @type    : 'global';
 @element : 'reset';
 
-@import 'semantic_ui/theme.config';
+@import (multiple) 'semantic_ui/theme.config';
+
+& {
 
 /*******************************
              Reset
@@ -46,3 +47,6 @@ input[type="text"], input[type="email"], input[type="search"], input[type="passw
 }
 
 .loadUIOverrides();
+
+}
+
