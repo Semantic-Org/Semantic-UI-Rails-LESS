@@ -588,6 +588,16 @@
        Groups
 --------------------*/
 
+.ui.segments {
+  margin: @margin 0em;
+}
+.ui.segments:first-child {
+  margin-top: 0em;
+}
+.ui.segments:last-child {
+  margin-bottom: 0em;
+}
+
 .ui.segments > .segment {
   top: 0px;
   bottom: 0px;
@@ -609,7 +619,6 @@
   bottom: 0px;
   margin-bottom: 0em;
   top: @attachedTopOffset;
-  margin-top: @margin;
   border-radius: @borderRadius @borderRadius 0em 0em;
 }
 

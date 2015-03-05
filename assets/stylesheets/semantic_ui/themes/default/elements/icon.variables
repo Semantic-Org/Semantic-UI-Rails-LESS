@@ -32,3 +32,12 @@
 @big: 2em;
 @huge: 4em;
 @massive: 8em;
+
+@fallbackSRC: asset-url("@{fontPath}/@{fontName}.eot");
+@src:
+  asset-url("@{fontPath}/@{fontName}.eot?#iefix") format('embedded-opentype'),
+  asset-url("@{fontPath}/@{fontName}.woff2") format('woff'),
+  asset-url("@{fontPath}/@{fontName}.woff") format('woff'),
+  asset-url("@{fontPath}/@{fontName}.ttf") format('truetype'),
+  asset-url("@{fontPath}/@{fontName}.svg#icons") format('svg')
+;

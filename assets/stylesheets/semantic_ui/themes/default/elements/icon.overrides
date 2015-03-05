@@ -1,14 +1,3 @@
-/*!
- * # Semantic UI - Icon
- * http://github.com/semantic-org/semantic-ui/
- *
- *
- * Copyright 2014 Contributors
- * Released under the MIT license
- * http://opensource.org/licenses/MIT
- *
- */
-
 /*
  * Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  * License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -624,7 +613,6 @@ i.icon.shutdown:before { content: "\f011"; }
 i.icon.clock:before { content: "\f017"; }
 i.icon.time:before { content: "\f017"; }
 i.icon.play.circle.outline:before { content: "\f01d"; }
-i.icon.clockwise:before { content: "\f01e"; }
 i.icon.headphone:before { content: "\f025"; }
 i.icon.volume.off:before { content: "\f026"; }
 i.icon.camera:before { content: "\f030"; }

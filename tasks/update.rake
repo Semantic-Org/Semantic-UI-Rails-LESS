@@ -140,6 +140,10 @@ namespace :update do
     patch(File.join(paths.stylesheets, 'definitions', '**/*.less')) do |content|
       content.gsub(%r{(url\()}, %q{asset-\1})
     end
+
+    patch(File.join(paths.stylesheets, 'themes', '**/*.variables')) do |content|
+      content.gsub(%r{(url\()}, %q{asset-\1})
+    end
   end
 
   def generate_semantic_ui_js

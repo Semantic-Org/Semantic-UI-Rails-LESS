@@ -102,6 +102,7 @@
 .ui.form input[type="email"],
 .ui.form input[type="number"],
 .ui.form input[type="password"],
+.ui.form input[type="search"],
 .ui.form input[type="tel"],
 .ui.form input[type="time"],
 .ui.form input[type="text"],
@@ -117,6 +118,7 @@
 .ui.form input[type="email"],
 .ui.form input[type="number"],
 .ui.form input[type="password"],
+.ui.form input[type="search"],
 .ui.form input[type="tel"],
 .ui.form input[type="time"],
 .ui.form input[type="text"],
@@ -125,7 +127,7 @@
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  tap-highlight-color:  rgba(255, 255, 255, 0);
 
   line-height: @inputLineHeight;
   padding: @inputPadding;
@@ -144,7 +146,7 @@
 .ui.form textarea {
   margin: 0em;
   -webkit-appearance: none;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  tap-highlight-color:  rgba(255, 255, 255, 0);
 
   padding: @textAreaPadding;
   font-size: @textAreaFontSize;
@@ -304,6 +306,7 @@
 .ui.form input[type="email"]:focus,
 .ui.form input[type="number"]:focus,
 .ui.form input[type="password"]:focus,
+.ui.form input[type="search"]:focus,
 .ui.form input[type="tel"]:focus,
 .ui.form input[type="time"]:focus,
 .ui.form input[type="text"]:focus,
@@ -365,23 +368,27 @@
 }
 
 .ui.form .fields.error .field textarea,
+.ui.form .fields.error .field select,
 .ui.form .fields.error .field input:not([type]),
 .ui.form .fields.error .field input[type="date"],
 .ui.form .fields.error .field input[type="datetime-local"],
 .ui.form .fields.error .field input[type="email"],
 .ui.form .fields.error .field input[type="number"],
 .ui.form .fields.error .field input[type="password"],
+.ui.form .fields.error .field input[type="search"],
 .ui.form .fields.error .field input[type="tel"],
 .ui.form .fields.error .field input[type="time"],
 .ui.form .fields.error .field input[type="text"],
 .ui.form .fields.error .field input[type="url"],
 .ui.form .field.error textarea,
+.ui.form .field.error select,
 .ui.form .field.error input:not([type]),
 .ui.form .field.error input[type="date"],
 .ui.form .field.error input[type="datetime-local"],
 .ui.form .field.error input[type="email"],
 .ui.form .field.error input[type="number"],
 .ui.form .field.error input[type="password"],
+.ui.form .field.error input[type="search"],
 .ui.form .field.error input[type="tel"],
 .ui.form .field.error input[type="time"],
 .ui.form .field.error input[type="text"],
@@ -393,12 +400,14 @@
   box-shadow: @inputErrorBoxShadow;
 }
 .ui.form .field.error textarea:focus,
+.ui.form .field.error select:focus,
 .ui.form .field.error input:not([type]):focus,
 .ui.form .field.error input[type="date"]:focus,
 .ui.form .field.error input[type="datetime-local"]:focus,
 .ui.form .field.error input[type="email"]:focus,
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="password"]:focus,
+.ui.form .field.error input[type="search"]:focus,
 .ui.form .field.error input[type="tel"]:focus,
 .ui.form .field.error input[type="time"]:focus,
 .ui.form .field.error input[type="text"]:focus,
@@ -409,6 +418,11 @@
 
   -webkit-appearance: none;
   box-shadow: @inputErrorFocusBoxShadow;
+}
+
+/* Preserve Native Select Stylings */
+.ui.form .field.error select {
+  -webkit-appearance: menulist-button;
 }
 
 /*------------------

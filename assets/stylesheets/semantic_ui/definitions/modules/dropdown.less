@@ -354,10 +354,10 @@
 }
 
 select.ui.dropdown {
-  height: @selectPreInitHeight;
-  padding: 0em;
-  margin: 0em;
-  visibility: hidden;
+  height: @selectHeight;
+  padding: @selectPadding;
+  border: @selectBorder;
+  visibility: @selectVisibility;
 }
 .ui.selection.dropdown > .text {
   margin-right: @selectionTextIconDistance;
@@ -399,6 +399,14 @@ select.ui.dropdown {
 .ui.selection.dropdown .menu:after,
 .ui.selection.dropdown .menu:before {
   display: none;
+}
+
+
+/* Scrollbar in IE */
+@media all and (-ms-high-contrast:none) {
+  .ui.selection.dropdown .menu {
+    min-width: calc(100% - @scrollBarWidth);
+  }
 }
 
 @media only screen and (max-width : @largestMobileScreen) {
