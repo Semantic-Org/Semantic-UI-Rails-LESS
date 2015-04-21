@@ -221,7 +221,7 @@ namespace :update do
     attr_reader :lib_semantic_ui
 
     def initialize
-      @root = File.expand_path('..', __dir__)
+      @root = File.expand_path('..', File.dirname(__FILE__))
       @config = File.join(@root, 'config')
 
       @tmp = File.join(@root, 'tmp')
@@ -248,7 +248,7 @@ namespace :update do
     end
 
     def self.render_file(file, values = {})
-      template = File.expand_path(file, __dir__)
+      template = File.expand_path(file, File.dirname(__FILE__))
       ErbRenderer.new(values).render(File.read(template))
     end
 

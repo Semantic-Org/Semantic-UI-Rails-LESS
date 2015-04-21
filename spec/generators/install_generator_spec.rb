@@ -9,7 +9,7 @@ describe SemanticUi::InstallGenerator do
 
   let(:dummy_app) { Dummy::Application }
   let(:dummy_assets) { dummy_app.assets }
-  let(:dummy_app_root) { File.expand_path('../dummy_app', __dir__) }
+  let(:dummy_app_root) { File.expand_path('../dummy_app', File.dirname(__FILE__)) }
 
   before_all do
     capture(:stdout) do

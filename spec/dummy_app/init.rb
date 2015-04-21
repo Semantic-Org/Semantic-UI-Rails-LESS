@@ -7,7 +7,7 @@ require 'less/rails/semantic_ui'
 module Dummy
   class Application < ::Rails::Application
 
-    config.root = __dir__
+    config.root = File.dirname(__FILE__)
     config.active_support.deprecation = :stderr
     config.cache_store = :memory_store
     config.consider_all_requests_local = true
