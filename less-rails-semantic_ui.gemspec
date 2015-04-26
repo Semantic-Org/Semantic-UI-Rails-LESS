@@ -26,5 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activesupport', '>= 4.0', '< 10.0'
   spec.add_development_dependency 'rails', '>= 4.0', '< 10.0'
   spec.add_development_dependency 'therubyracer', '~> 0.12.0'
-  spec.add_development_dependency 'appraisal', '~> 1.0.2'
+  spec.add_development_dependency 'appraisal', '>= 2.0', '< 3.0'
 end
