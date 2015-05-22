@@ -79,6 +79,7 @@ namespace :update do
 
     patch_theme_config
     patch_paths_to_theme_config
+
     patch_dependencies_in_less
 
     patch_asset_paths
@@ -96,9 +97,7 @@ namespace :update do
   end
 
   def patch_theme_config
-    theme_config_file = File.join(paths.generator_templates, 'theme.config')
-
-    patch(theme_config_file) do |content|
+    patch(File.join(paths.generator_templates, 'theme.config')) do |content|
       content = must_be_changed(content) { |c| c.sub(%r{\/\*.*?\*\/}m, '') }
       content = must_be_changed(content) { |c| c.gsub(%q{@themesFolder : 'themes/';}, %q{@themesFolder : 'semantic_ui/themes/';}) }
       content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : 'site/';}, %q{@siteFolder  : 'semantic_ui/config/';}) }
@@ -118,6 +117,10 @@ namespace :update do
         header = <<-HEADER.strip_heredoc
           /*
            *= depend_on semantic_ui/theme.config
+           *= depend_on semantic_ui/config/globals/reset.overrides
+           *= depend_on semantic_ui/config/globals/reset.variables
+           *= depend_on semantic_ui/config/globals/site.overrides
+           *= depend_on semantic_ui/config/globals/site.variables
            *= depend_on semantic_ui/config/#{type.pluralize}/#{element}.overrides
            *= depend_on semantic_ui/config/#{type.pluralize}/#{element}.variables
            */
@@ -186,10 +189,16 @@ namespace :update do
     cp_r src, dest
   end
 
-  def patch(file_pattern, &block)
+  def look_over(file_pattern, &block)
     Dir[file_pattern].each do |file|
       next if File.directory?(file)
 
+      block.call(file)
+    end
+  end
+
+  def patch(file_pattern, &block)
+    look_over(file_pattern) do |file|
       File.write(file, File.open(file) { |f| block.call(f.read) })
     end
   end

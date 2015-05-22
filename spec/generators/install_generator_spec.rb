@@ -23,14 +23,14 @@ describe SemanticUi::InstallGenerator do
     rm_rf File.join(dummy_app.config.root, 'vendor')
   end
 
+  let(:javascripts_dir) { File.join(dummy_app_root, 'vendor', 'assets', 'javascripts') }
+  let(:stylesheets_dir) { File.join(dummy_app_root, 'vendor', 'assets', 'stylesheets') }
+
   describe 'installed files' do
 
     helper :file_exists? do |file|
       assert(File.exists?(file)) == true
     end
-
-    let(:javascripts_dir) { File.join(dummy_app_root, 'vendor', 'assets', 'javascripts') }
-    let(:stylesheets_dir) { File.join(dummy_app_root, 'vendor', 'assets', 'stylesheets') }
 
     it 'has semantic_ui.js' do
       expect(File.join(javascripts_dir, 'semantic_ui', 'semantic_ui.js')).file_exists?
@@ -55,7 +55,9 @@ describe SemanticUi::InstallGenerator do
   end
 
   describe 'application.css' do
-    let(:application_css) { dummy_assets['application.css'].to_s.strip }
+    def application_css
+      dummy_assets['application.css'].to_s.strip
+    end
 
     it 'should include semantic_ui.css' do
       expect(application_css).to.include?('.ui.button')
@@ -67,6 +69,57 @@ describe SemanticUi::InstallGenerator do
 
     it 'should include correct paths to fonts' do
       expect(application_css).to.include?('/semantic_ui/themes/default/assets/fonts/icons.ttf')
+    end
+
+    describe 'override variables' do
+      def change_variable(file, value, &block)
+        content = File.read(file)
+
+        File.write(file, content + "\n@blue: #{value};\n")
+        block.call
+      ensure
+        File.write(file, content)
+      end
+
+      describe 'in theme.config' do
+        let(:theme_config_file) { File.join(stylesheets_dir, 'semantic_ui', 'theme.config') }
+
+        it 'should include changed variable' do
+          change_variable theme_config_file, '#3b83c1' do
+            expect(application_css).to.include?('#3b83c1')
+          end
+        end
+
+        it 'should include changed cached variable' do
+          change_variable theme_config_file, '#3b83c1' do
+            expect(application_css).to.include?('#3b83c1')
+          end
+
+          change_variable theme_config_file, '#3b83c2' do
+            expect(application_css).to.include?('#3b83c2')
+          end
+        end
+      end
+
+      describe 'in config/**/*.variables' do
+        let(:theme_config_file) { File.join(stylesheets_dir, 'semantic_ui', 'config', 'globals', 'site.variables') }
+
+        it 'should include changed variable' do
+          change_variable theme_config_file, '#3b83c1' do
+            expect(application_css).to.include?('#3b83c1')
+          end
+        end
+
+        it 'should include changed cached variable' do
+          change_variable theme_config_file, '#3b83c1' do
+            expect(application_css).to.include?('#3b83c1')
+          end
+
+          change_variable theme_config_file, '#3b83c2' do
+            expect(application_css).to.include?('#3b83c2')
+          end
+        end
+      end
     end
   end
 
