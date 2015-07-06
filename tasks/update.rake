@@ -11,6 +11,7 @@ namespace :update do
     checkout_repository
     choose_version(version)
 
+    cleanup_assets
     transform_sources
 
     bump_gem_version(version)
@@ -30,6 +31,10 @@ namespace :update do
 
   def choose_version(version)
     sh %Q{cd '#{paths.tmp_semantic_ui}' && git checkout --quiet #{version}}
+  end
+
+  def cleanup_assets
+    rm_rf(paths.assets)
   end
 
   def transform_sources
@@ -99,8 +104,8 @@ namespace :update do
   def patch_theme_config
     patch(File.join(paths.generator_templates, 'theme.config')) do |content|
       content = must_be_changed(content) { |c| c.sub(%r{\/\*.*?\*\/}m, '') }
-      content = must_be_changed(content) { |c| c.gsub(%q{@themesFolder : 'themes/';}, %q{@themesFolder : 'semantic_ui/themes/';}) }
-      content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : 'site/';}, %q{@siteFolder  : 'semantic_ui/config/';}) }
+      content = must_be_changed(content) { |c| c.gsub(%q{@themesFolder : 'themes';}, %q{@themesFolder : 'semantic_ui/themes';}) }
+      content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : 'site';}, %q{@siteFolder  : 'semantic_ui/config';}) }
       must_be_changed(content) { |c| c.gsub(%q{@import "theme.less";}, %q{@import "semantic_ui/theme.less";}) }
     end
   end
@@ -199,6 +204,7 @@ namespace :update do
 
   def patch(file_pattern, &block)
     look_over(file_pattern) do |file|
+      puts "patch file: #{file}"
       File.write(file, File.open(file) { |f| block.call(f.read) })
     end
   end
@@ -220,6 +226,7 @@ namespace :update do
     attr_reader :tmp_semantic_ui_themes
     attr_reader :tmp_semantic_ui_site
 
+    attr_reader :assets
     attr_reader :fonts
     attr_reader :images
     attr_reader :javascripts
@@ -240,10 +247,11 @@ namespace :update do
       @tmp_semantic_ui_themes = File.join(@tmp_semantic_ui_src, 'themes')
       @tmp_semantic_ui_site = File.join(@tmp_semantic_ui_src, '_site')
 
-      @fonts = File.join(@root, 'assets', 'fonts', 'semantic_ui')
-      @images = File.join(@root, 'assets', 'images', 'semantic_ui')
-      @javascripts = File.join(@root, 'assets', 'javascripts', 'semantic_ui')
-      @stylesheets = File.join(@root, 'assets', 'stylesheets', 'semantic_ui')
+      @assets = File.join(@root, 'assets')
+      @fonts = File.join(@assets, 'fonts', 'semantic_ui')
+      @images = File.join(@assets, 'images', 'semantic_ui')
+      @javascripts = File.join(@assets, 'javascripts', 'semantic_ui')
+      @stylesheets = File.join(@assets, 'stylesheets', 'semantic_ui')
 
       @generator_templates = File.join(@root, 'lib', 'generators', 'semantic_ui', 'install', 'templates')
 
