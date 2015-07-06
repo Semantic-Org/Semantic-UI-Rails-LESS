@@ -85,6 +85,7 @@ namespace :update do
     patch_theme_config
     patch_paths_to_theme_config
 
+    patch_theme_less
     patch_dependencies_in_less
 
     patch_asset_paths
@@ -113,6 +114,12 @@ namespace :update do
   def patch_paths_to_theme_config
     patch(File.join(paths.stylesheets, 'definitions', '**/*.less')) do |content|
       must_be_changed(content) { |c| c.gsub(%q{@import (multiple) '../../theme.config';}, %q{@import (multiple) 'semantic_ui/theme.config';}) }
+    end
+  end
+
+  def patch_theme_less
+    patch(File.join(paths.stylesheets, 'theme.less')) do |content|
+      must_be_changed(content) { |c| c.gsub(%q{(optional) }, %q{}) }
     end
   end
 
