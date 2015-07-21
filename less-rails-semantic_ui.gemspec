@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['maxim.dobryakov@gmail.com']
   spec.summary       = %q{Semantic UI assets for Rails}
   spec.description   = %q{This is a gem for Rails with Semantic UI assets inside.}
-  spec.homepage      = 'https://github.com/maxd/less-rails-semantic_ui'
+  spec.homepage      = 'https://github.com/Semantic-Org/Semantic-UI-Rails-LESS'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
