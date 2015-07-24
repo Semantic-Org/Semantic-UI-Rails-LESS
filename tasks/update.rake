@@ -15,6 +15,8 @@ namespace :update do
     transform_sources
 
     bump_gem_version(version)
+
+    mark_all_files_as_world_readable
   end
 
   def paths
@@ -189,6 +191,13 @@ namespace :update do
   def bump_gem_version(version)
     version_file = File.join(paths.lib_semantic_ui, 'version.rb')
     File.write(version_file, File.read(version_file).gsub(/\d+\.\d+\.\d+\.\d+/, "#{version}.0"))
+  end
+
+  def mark_all_files_as_world_readable
+    Dir[File.join(paths.root, '{assets,lib,spec,tasks}', '**/*')].each do |file|
+      mode = File.directory?(file) ? 0755 : 0644
+      File.chmod(mode, file)
+    end
   end
 
   private
