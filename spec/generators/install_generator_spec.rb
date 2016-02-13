@@ -121,6 +121,29 @@ describe SemanticUi::InstallGenerator do
         end
       end
     end
+
+    describe 'override 3 random themes' do
+      def change_themes(file, theme, &block)
+        content = File.read(file)
+
+        File.write(file, content.gsub("'default'", "'#{theme}'"))
+        block.call
+      ensure
+        File.write(file, content)
+      end
+
+      let(:theme_config_file) { File.join(stylesheets_dir, 'semantic_ui', 'theme.config') }
+
+      Dir[File.expand_path('../../tmp/semantic-ui/src/themes/*', __dir__)].map { |d| File.basename(d) }.sample(3).each do |theme|
+        describe "override `#{theme}` theme in theme.config" do
+          it 'should not raise error' do
+            change_themes(theme_config_file, theme) do
+              expect(application_css).to.present?
+            end
+          end
+        end
+      end
+    end
   end
 
   describe 'application.js' do

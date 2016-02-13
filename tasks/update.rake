@@ -42,6 +42,7 @@ namespace :update do
   def transform_sources
     transform_definitions
     transform_themes
+    generate_stubs_for_themes
 
     apply_patches
 
@@ -78,6 +79,33 @@ namespace :update do
 
     Dir[File.join(paths.tmp_semantic_ui_site, '**/*.{overrides,variables}')].each do |src|
       copy_tree(src, paths.tmp_semantic_ui_site, File.join(paths.generator_templates, 'config'))
+    end
+  end
+
+  # Less 1.7.0 doesn't support `@import (optional)` directive, so it will be removed later here (see patch_theme_less method)
+  # from theme.less and need to generate stubs now
+  def generate_stubs_for_themes
+    Dir[File.join(paths.stylesheets, 'themes', '*')].each do |theme_dir|
+      site_variables_file = File.join(theme_dir, 'globals', 'site.variables')
+      generate_stub(site_variables_file)
+
+      Dir[File.join(paths.stylesheets, 'definitions', '**', '*.less')].each do |definition_file|
+        type = File.basename(File.dirname(definition_file))
+        element = File.basename(definition_file, '.less')
+
+        element_variables_file = File.join(theme_dir, type, "#{element}.variables")
+        generate_stub(element_variables_file)
+
+        element_overrides_file = File.join(theme_dir, type, "#{element}.overrides")
+        generate_stub(element_overrides_file)
+      end
+    end
+  end
+
+  def generate_stub(file)
+    unless File.exists?(file)
+      mkdir_p(File.dirname(file))
+      touch(file)
     end
   end
 
