@@ -548,7 +548,6 @@ Floated Menu / Item
   width: 100%;
   height: @dividerSize;
   background: @verticalDividerBackground;
-  height: 1px;
 }
 
 .ui.vertical.menu .item:first-child:before {
@@ -649,7 +648,9 @@ Floated Menu / Item
 .ui.tabular.menu + .attached:not(.top).segment,
 .ui.tabular.menu + .attached:not(.top).segment + .attached:not(.top).segment {
   border-top: none;
-  margin: 0px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
   width: 100%;
 }
 .top.attached.segment + .ui.bottom.tabular.menu {
@@ -1009,9 +1010,11 @@ Floated Menu / Item
 }
 
 /* Hover */
-.ui.secondary.inverted.pointing.menu .item:hover {
+.ui.secondary.inverted.pointing.menu .link.item:hover,
+.ui.secondary.inverted.pointing.menu a.item:hover {
   color: @secondaryPointingInvertedItemHoverTextColor;
 }
+
 
 /* Active */
 .ui.secondary.inverted.pointing.menu .active.item {
@@ -1080,6 +1083,8 @@ Floated Menu / Item
 }
 .ui.vertical.text.menu .item {
   margin: @textVerticalMenuItemMargin;
+  padding-left: 0em;
+  padding-right: 0em;
 }
 .ui.vertical.text.menu .item > i.icon {
   float: @textVerticalMenuIconFloat;
@@ -1240,7 +1245,15 @@ Floated Menu / Item
     width: 100%;
     height: @dividerSize;
     background: @verticalDividerBackground;
-    height: 1px;
+  }
+
+  .ui.stackable.menu .left.menu,
+  .ui.stackable.menu .left.item {
+    margin-right: 0 !important;
+  }
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .right.item {
+    margin-left: 0 !important;
   }
 }
 
@@ -1374,8 +1387,7 @@ Floated Menu / Item
 
 /*--- Pressed ---*/
 .ui.inverted.menu a.item:active,
-.ui.inverted.menu .link.item:active,
-.ui.inverted.menu a.item:active {
+.ui.inverted.menu .link.item:active{
   background: @invertedMenuPressedBackground;
   color: @invertedMenuPressedColor;
 }
@@ -1903,6 +1915,22 @@ Floated Menu / Item
      Sizes
 ---------------*/
 
+/* Mini */
+.ui.mini.menu {
+  font-size: @mini;
+}
+.ui.mini.vertical.menu {
+  width: @miniWidth;
+}
+
+/* Tiny */
+.ui.tiny.menu {
+  font-size: @tiny;
+}
+.ui.tiny.vertical.menu {
+  width: @tinyWidth;
+}
+
 /* Small */
 .ui.small.menu {
   font-size: @small;
@@ -1933,6 +1961,22 @@ Floated Menu / Item
 }
 .ui.huge.vertical.menu {
   width: @hugeWidth;
+}
+
+/* Big */
+.ui.big.menu {
+  font-size: @big;
+}
+.ui.big.vertical.menu {
+  width: @bigWidth;
+}
+
+/* Massive */
+.ui.massive.menu {
+  font-size: @massive;
+}
+.ui.massive.vertical.menu {
+  width: @massiveWidth;
 }
 
 .loadUIOverrides();
