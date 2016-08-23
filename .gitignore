@@ -13,3 +13,4 @@
 *.a
 mkmf.log
 *.gem
+spec/dummy_app/app/assets
