@@ -1,13 +1,3 @@
-/*
- *= depend_on semantic_ui/theme.config
- *= depend_on semantic_ui/config/globals/reset.overrides
- *= depend_on semantic_ui/config/globals/reset.variables
- *= depend_on semantic_ui/config/globals/site.overrides
- *= depend_on semantic_ui/config/globals/site.variables
- *= depend_on semantic_ui/config/collections/message.overrides
- *= depend_on semantic_ui/config/collections/message.variables
- */
-
 /*!
  * # Semantic UI - Message
  * http://github.com/semantic-org/semantic-ui/
@@ -25,7 +15,7 @@
 @type    : 'collection';
 @element : 'message';
 
-@import (multiple) 'semantic_ui/theme.config';
+@import (multiple) '../../theme.config';
 
 /*******************************
             Message
@@ -186,6 +176,9 @@
 
 .ui.compact.message {
   display: inline-block;
+}
+.ui.compact.icon.message {
+  display: inline-flex;
 }
 
 

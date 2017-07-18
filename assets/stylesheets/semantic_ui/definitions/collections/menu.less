@@ -1,14 +1,4 @@
 /*
- *= depend_on semantic_ui/theme.config
- *= depend_on semantic_ui/config/globals/reset.overrides
- *= depend_on semantic_ui/config/globals/reset.variables
- *= depend_on semantic_ui/config/globals/site.overrides
- *= depend_on semantic_ui/config/globals/site.variables
- *= depend_on semantic_ui/config/collections/menu.overrides
- *= depend_on semantic_ui/config/collections/menu.variables
- */
-
-/*
  * # Semantic - Menu
  * http://github.com/semantic-org/semantic-ui/
  *
@@ -27,7 +17,7 @@
 @type    : 'collection';
 @element : 'menu';
 
-@import (multiple) 'semantic_ui/theme.config';
+@import (multiple) '../../theme.config';
 
 /*******************************
             Standard
@@ -1248,6 +1238,11 @@ Floated Menu / Item
   .ui.stackable.menu .right.item {
     margin-left: 0 !important;
   }
+
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .left.menu {
+    flex-direction: column;
+  }
 }
 
 /*--------------
@@ -1658,6 +1653,9 @@ Floated Menu / Item
   margin-right: 0em !important;
   text-align: center;
   justify-content: center;
+}
+.ui.attached.item.menu {
+  margin: 0em @attachedHorizontalOffset !important;
 }
 
 .ui.item.menu .item:last-child:before {

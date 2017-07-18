@@ -19,10 +19,10 @@
 @import "@{themesFolder}/@{site}/globals/site.variables";
 
 /* Component's site.variables */
-@import "@{themesFolder}/@{theme}/globals/site.variables";
+@import (optional) "@{themesFolder}/@{theme}/globals/site.variables";
 
 /* Site theme site.variables */
-@import "@{siteFolder}/globals/site.variables";
+@import (optional) "@{siteFolder}/globals/site.variables";
 
 
 /*-------------------
@@ -33,10 +33,10 @@
 @import "@{themesFolder}/default/@{type}s/@{element}.variables";
 
 /* Packaged Theme */
-@import "@{themesFolder}/@{theme}/@{type}s/@{element}.variables";
+@import (optional) "@{themesFolder}/@{theme}/@{type}s/@{element}.variables";
 
 /* Site Theme */
-@import "@{siteFolder}/@{type}s/@{element}.variables";
+@import (optional) "@{siteFolder}/@{type}s/@{element}.variables";
 
 
 /*******************************
@@ -56,6 +56,6 @@
 -------------------*/
 
 .loadUIOverrides() {
-  @import "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides";
-  @import "@{siteFolder}/@{type}s/@{element}.overrides";
+  @import (optional) "@{themesFolder}/@{theme}/@{type}s/@{element}.overrides";
+  @import (optional) "@{siteFolder}/@{type}s/@{element}.overrides";
 }

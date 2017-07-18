@@ -1,13 +1,3 @@
-/*
- *= depend_on semantic_ui/theme.config
- *= depend_on semantic_ui/config/globals/reset.overrides
- *= depend_on semantic_ui/config/globals/reset.variables
- *= depend_on semantic_ui/config/globals/site.overrides
- *= depend_on semantic_ui/config/globals/site.variables
- *= depend_on semantic_ui/config/globals/site.overrides
- *= depend_on semantic_ui/config/globals/site.variables
- */
-
 /*!
  * # Semantic UI - Site
  * http://github.com/semantic-org/semantic-ui/
@@ -26,7 +16,7 @@
 @type    : 'global';
 @element : 'site';
 
-@import (multiple) 'semantic_ui/theme.config';
+@import (multiple) '../../theme.config';
 
 /*******************************
              Page
@@ -55,8 +45,6 @@ body {
   color: @textColor;
   font-smoothing: @fontSmoothing;
 }
-
-
 
 /*******************************
              Headers
@@ -138,6 +126,49 @@ a:hover {
 
 
 /*******************************
+         Scrollbars
+*******************************/
+
+.addScrollbars() when (@useCustomScrollbars) {
+
+  /* Force Simple Scrollbars */
+  body ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: @customScrollbarWidth;
+  }
+  body ::-webkit-scrollbar-track {
+    background: @trackBackground;
+    border-radius: @trackBorderRadius;
+  }
+  body ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: @thumbBorderRadius;
+    background: @thumbBackground;
+    transition: @thumbTransition;
+  }
+  body ::-webkit-scrollbar-thumb:window-inactive {
+    background: @thumbInactiveBackground;
+  }
+  body ::-webkit-scrollbar-thumb:hover {
+    background: @thumbHoverBackground;
+  }
+
+  /* Inverted UI */
+  body .ui.inverted::-webkit-scrollbar-track {
+    background: @trackInvertedBackground;
+  }
+  body .ui.inverted::-webkit-scrollbar-thumb {
+    background: @thumbInvertedBackground;
+  }
+  body .ui.inverted::-webkit-scrollbar-thumb:window-inactive {
+    background: @thumbInvertedInactiveBackground;
+  }
+  body .ui.inverted::-webkit-scrollbar-thumb:hover {
+    background: @thumbInvertedHoverBackground;
+  }
+}
+
+/*******************************
           Highlighting
 *******************************/
 
@@ -172,5 +203,5 @@ input::selection {
   color: @inputHighlightColor;
 }
 
-
+.addScrollbars();
 .loadUIOverrides();
