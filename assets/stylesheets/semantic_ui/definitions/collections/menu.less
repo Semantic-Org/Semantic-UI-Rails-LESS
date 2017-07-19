@@ -1248,6 +1248,11 @@ Floated Menu / Item
   .ui.stackable.menu .right.item {
     margin-left: 0 !important;
   }
+
+  .ui.stackable.menu .right.menu,
+  .ui.stackable.menu .left.menu {
+    flex-direction: column;
+  }
 }
 
 /*--------------
@@ -1658,6 +1663,9 @@ Floated Menu / Item
   margin-right: 0em !important;
   text-align: center;
   justify-content: center;
+}
+.ui.attached.item.menu {
+  margin: 0em @attachedHorizontalOffset !important;
 }
 
 .ui.item.menu .item:last-child:before {
