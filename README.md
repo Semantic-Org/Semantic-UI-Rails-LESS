@@ -17,6 +17,7 @@ Add this block to your application's Gemfile:
 
 gem 'less-rails-semantic_ui', '~> x.x.x'
 gem 'autoprefixer-rails', '~> x.x.x'
+gem 'therubyracer'
 ```
 
 > Semantic UI is using [autoprefixer](https://github.com/postcss/autoprefixer) (in our case [autoprefixer-rails](https://github.com/ai/autoprefixer-rails))
