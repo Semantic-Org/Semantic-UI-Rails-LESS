@@ -843,8 +843,8 @@ select.ui.dropdown {
 .ui.default.dropdown:not(.button) > .text {
   color: @defaultTextColor;
 }
-.ui.dropdown:not(.button) > input:focus + .default.text,
-.ui.default.dropdown:not(.button) > input:focus + .text {
+.ui.dropdown:not(.button) > input:focus ~ .default.text,
+.ui.default.dropdown:not(.button) > input:focus ~ .text {
   color: @defaultTextFocusColor;
 }
 /*--------------------
