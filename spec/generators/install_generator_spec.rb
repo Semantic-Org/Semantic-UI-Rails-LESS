@@ -12,7 +12,7 @@ describe SemanticUi::InstallGenerator do
   let(:dummy_app_root) { File.expand_path('../dummy_app', __dir__) }
 
   before_all do
-    capture(:stdout) do
+    spec_helper_silence_stdout do
       generator.start([], destination_root: dummy_app_root)
     end
 
