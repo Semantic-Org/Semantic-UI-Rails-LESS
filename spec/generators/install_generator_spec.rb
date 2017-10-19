@@ -72,10 +72,16 @@ describe SemanticUi::InstallGenerator do
     end
 
     describe 'override variables' do
-      def change_variable(file, value, &block)
+      def change_variable(file, value, offset = nil, &block)
         content = File.read(file)
 
         File.write(file, content + "\n@blue: #{value};\n")
+
+        if offset
+          mtime = Time.now + offset
+          File.utime(mtime, mtime, file)
+        end
+
         block.call
       ensure
         File.write(file, content)
@@ -95,7 +101,7 @@ describe SemanticUi::InstallGenerator do
             expect(application_css).to.include?('#3b83c1')
           end
 
-          change_variable theme_config_file, '#3b83c2' do
+          change_variable theme_config_file, '#3b83c2', 1 do
             expect(application_css).to.include?('#3b83c2')
           end
         end
@@ -115,7 +121,7 @@ describe SemanticUi::InstallGenerator do
             expect(application_css).to.include?('#3b83c1')
           end
 
-          change_variable theme_config_file, '#3b83c2' do
+          change_variable theme_config_file, '#3b83c2', 1 do
             expect(application_css).to.include?('#3b83c2')
           end
         end
