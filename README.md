@@ -1,3 +1,4 @@
+just a test
 # less-rails-semantic_ui [![Gem Version](https://badge.fury.io/rb/less-rails-semantic_ui.svg)](http://badge.fury.io/rb/less-rails-semantic_ui) [![Build Status](https://travis-ci.org/Semantic-Org/Semantic-UI-Rails-LESS.png?branch=master)](https://travis-ci.org/Semantic-Org/Semantic-UI-Rails-LESS)
 
 This is a gem for Rails with [Semantic UI](https://github.com/Semantic-Org/Semantic-UI/) assets inside.
