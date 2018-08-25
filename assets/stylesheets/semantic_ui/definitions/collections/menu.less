@@ -360,6 +360,15 @@
 *******************************/
 
 /*--------------
+     List
+---------------*/
+
+/* Menu divider shouldnt apply */
+.ui.menu .list .item:before {
+  background: none !important;
+}
+
+/*--------------
      Sidebar
 ---------------*/
 
@@ -453,9 +462,9 @@
 
 .ui.menu .item.disabled,
 .ui.menu .item.disabled:hover {
-  cursor: default;
+  cursor: default !important;
   background-color: transparent !important;
-  color: @disabledTextColor;
+  color: @disabledTextColor !important;
 }
 
 
