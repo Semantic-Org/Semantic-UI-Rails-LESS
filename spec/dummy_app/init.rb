@@ -12,6 +12,7 @@ module Dummy
     config.cache_store = :memory_store
     config.consider_all_requests_local = true
     config.eager_load = false
+    config.assets.digest = false
 
     config.assets.configure do |env|
       env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
