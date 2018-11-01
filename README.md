@@ -15,8 +15,8 @@ Add this block to your application's Gemfile:
 ```ruby
 # Semantic UI assets
 
-gem 'less-rails-semantic_ui', '~> x.x.x'
-gem 'autoprefixer-rails', '~> x.x.x'
+gem 'less-rails-semantic_ui'
+gem 'autoprefixer-rails'
 gem 'therubyracer'
 ```
 
