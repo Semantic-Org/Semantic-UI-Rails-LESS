@@ -261,6 +261,10 @@ i.flag.eh:before,
 i.flag.western.sahara:before {
   background-position: 0px -1664px;
 }
+i.flag.gb.eng:before,
+i.flag.england:before {
+  background-position: 0px -1690px;
+}
 i.flag.er:before,
 i.flag.eritrea:before {
   background-position: 0px -1716px;
@@ -568,7 +572,7 @@ i.flag.mali:before {
 i.flag.mm:before,
 i.flag.myanmar:before,
 i.flag.burma:before {
-  background-position: -36px -1717px;
+  background-position: -73px -1821px;
 }
 i.flag.mn:before,
 i.flag.mongolia:before {
