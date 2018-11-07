@@ -82,8 +82,6 @@ namespace :update do
     end
   end
 
-  # Less 1.7.0 doesn't support `@import (optional)` directive, so it will be removed later here (see patch_theme_less method)
-  # from theme.less and need to generate stubs now
   def generate_stubs_for_themes
     Dir[File.join(paths.stylesheets, 'themes', '*')].each do |theme_dir|
       site_variables_file = File.join(theme_dir, 'globals', 'site.variables')
@@ -115,7 +113,6 @@ namespace :update do
     patch_theme_config
     patch_paths_to_theme_config
 
-    patch_theme_less
     patch_dependencies_in_less
 
     patch_asset_paths
@@ -137,19 +134,13 @@ namespace :update do
       content = must_be_changed(content) { |c| c.sub(%r{\/\*.*?\*\/}m, '') }
       content = must_be_changed(content) { |c| c.gsub(%q{@themesFolder : 'themes';}, %q{@themesFolder : 'semantic_ui/themes';}) }
       content = must_be_changed(content) { |c| c.gsub(%q{@siteFolder  : 'site';}, %q{@siteFolder  : 'semantic_ui/config';}) }
-      must_be_changed(content) { |c| c.gsub(%q{@import "theme.less";}, %q{@import "semantic_ui/theme.less";}) }
+      must_be_changed(content) { |c| c.gsub(%q{@import (multiple) "theme.less";}, %q{@import (multiple) "semantic_ui/theme.less";}) }
     end
   end
 
   def patch_paths_to_theme_config
     patch(File.join(paths.stylesheets, 'definitions', '**/*.less')) do |content|
       must_be_changed(content) { |c| c.gsub(%q{@import (multiple) '../../theme.config';}, %q{@import (multiple) 'semantic_ui/theme.config';}) }
-    end
-  end
-
-  def patch_theme_less
-    patch(File.join(paths.stylesheets, 'theme.less')) do |content|
-      must_be_changed(content) { |c| c.gsub(%q{(optional) }, %q{}) }
     end
   end
 
