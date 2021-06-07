@@ -1,3 +1,6 @@
+### No Longer Maintained
+Please consider this project abandoned. There are many roadblocks that prevent upgrading this to the latest Semantic-UI and now there's Fomantic-UI. https://github.com/Semantic-Org/Semantic-UI-Rails-LESS/issues/53. I suggest you look at bundling Fomantic-UI in with webpacker instead. It is possible though not completely straightforward. This project is starting to get security tickets around dependencies (that I won't fix), so user beware.
+
 # less-rails-semantic_ui [![Gem Version](https://badge.fury.io/rb/less-rails-semantic_ui.svg)](http://badge.fury.io/rb/less-rails-semantic_ui) [![Build Status](https://travis-ci.org/Semantic-Org/Semantic-UI-Rails-LESS.png?branch=master)](https://travis-ci.org/Semantic-Org/Semantic-UI-Rails-LESS)
 
 This is a gem for Rails with [Semantic UI](https://github.com/Semantic-Org/Semantic-UI/) assets inside.
