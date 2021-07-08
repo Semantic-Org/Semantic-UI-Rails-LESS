@@ -24,8 +24,8 @@ gem 'therubyracer'
 ```
 
 > Semantic UI is using [autoprefixer](https://github.com/postcss/autoprefixer) (in our case [autoprefixer-rails](https://github.com/ai/autoprefixer-rails))
-> to appending additional CSS vendor-prefixes for improve compatibility with different browsers.
-> Without it some parts of Semantic UI (i.e. transitions or modal dialogs because they depends to transitions) won't works in some browsers.
+> to append additional CSS vendor-prefixes for improved compatibility with different browsers.
+> Without it, some parts of Semantic UI (i.e. transitions or modal dialogs because they depends on transitions) won't work in some browsers.
 > You can remove this gem if you don't use such functionality of Semantic UI.
 >
 > P.S. I hope in the future this hack will be unnecessary.
